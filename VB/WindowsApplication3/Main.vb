@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.ComponentModel
 Imports System.Data
@@ -9,27 +8,22 @@ Imports System.Windows.Forms
 Imports DevExpress.XtraGrid.Views.Layout.Events
 Imports DevExpress.XtraGrid.Views.Layout
 Imports DevExpress.XtraLayout.Utils
+Imports DevExpress.XtraEditors
 
-Namespace WindowsApplication3
-	Partial Public Class Form1
-		Inherits Form
+Namespace DXSample
+	Partial Public Class Main
+		Inherits XtraForm
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub
-		Protected Overrides Overloads Sub Dispose(ByVal disposing As Boolean)
-			If disposing Then
-				If components IsNot Nothing Then
-					components.Dispose()
-				End If
-			End If
-			MyBase.Dispose(disposing)
-		End Sub
 
-		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
-			Me.categoriesTableAdapter.Fill(Me.nwindDataSet.Categories)
+		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+			recordBindingSource.DataSource = DataHelper.GetData(10)
 		End Sub
 		Private Sub layoutView1_CustomCardLayout(ByVal sender As Object, ByVal e As LayoutViewCustomCardLayoutEventArgs) Handles layoutView1.CustomCardLayout
-			If e.RowHandle = layoutView1.FocusedRowHandle Then
+			Dim view As LayoutView = TryCast(sender, LayoutView)
+			If e.RowHandle = view.FocusedRowHandle Then
 				e.CardDifferences.AddItemDifference("Group1", LayoutItemDifferenceType.GroupExpanded, True)
 			End If
 		End Sub
