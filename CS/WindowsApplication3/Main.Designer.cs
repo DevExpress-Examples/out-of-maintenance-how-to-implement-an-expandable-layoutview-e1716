@@ -197,13 +197,11 @@ namespace DXSample {
             // repositoryItemPictureEdit1
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            this.repositoryItemPictureEdit1.ZoomAccelerationFactor = 1D;
             // 
             // layoutViewCard1
             // 
             this.layoutViewCard1.CustomizationFormText = "TemplateCard";
             this.layoutViewCard1.GroupBordersVisible = false;
-            this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutViewField_colID,
             this.layoutViewField_colText,
@@ -292,7 +290,6 @@ namespace DXSample {
             this.layoutViewField_colImage.Location = new System.Drawing.Point(136, 48);
             this.layoutViewField_colImage.Name = "layoutViewField_colImage";
             this.layoutViewField_colImage.Size = new System.Drawing.Size(136, 24);
-            this.layoutViewField_colImage.StartNewLine = true;
             this.layoutViewField_colImage.TextSize = new System.Drawing.Size(50, 13);
             // 
             // layoutViewField_colDetail
